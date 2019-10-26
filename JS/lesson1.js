@@ -11,7 +11,10 @@ let num4 = 8;
 result3 = Math.abs(10 - num3) < Math.abs(10 - num4) ?  "Первое число ближе к 10" : "Второе число ближе к 10";
 console.log(result3);
 
-width = 50;
-height =100;
-square = width * height;
+height = 11;
+length = 7;
+width =12;
+square = (height * length + length * width + height * width) * 2;
 console.log(square);
+info = width > height ? "Ширина больше, чем высота" : "Высота больше чем длина (равна длине)";
+console.log(info);
