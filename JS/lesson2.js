@@ -1,13 +1,16 @@
 
 // Задача №1
-let num = [2, 4, 7, 3, 1, 7, 3, 10, 245, 6, 2, 13];
-let a = 7;
-function findCouple(array, number) {
+let num = [3, 4, 5, 3, 1, 7, 0];
+let a = 0;
+	for (let i = 0; i < num.length; i++) {
+		for (let q = 0; q < num.length; q++) {
+			if (num[i] + num[q] === 7) {
+				console.log("сумма чисел " + num[i] + " и " + num[q] + " равна 7");
+			}  
+		}
+		
+	}
 	
-}
-console.log(a);
-
-
 
 // Задача №2
 
@@ -81,3 +84,5 @@ else if (sum < sum2) {
 else {
 	console.log("средние арифметические суммы двух массивов равны");
 }
+
+// Задача №5
