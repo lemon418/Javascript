@@ -1,16 +1,15 @@
 
 // Задача №1
-let num = [3, 4, 5, 3, 1, 7, 0];
+let num = [2, 6, 5, 3, 1, 7, 0];
 let a = 0;
 	for (let i = 0; i < num.length; i++) {
-		for (let q = 0; q < num.length; q++) {
+		for (let q = 1 + a; q < num.length; q++) {
 			if (num[i] + num[q] === 7) {
 				console.log("сумма чисел " + num[i] + " и " + num[q] + " равна 7");
-			}  
+			}  	
 		}
-		
+		a = a + 1;
 	}
-	
 
 // Задача №2
 
