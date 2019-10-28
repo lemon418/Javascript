@@ -85,3 +85,32 @@ else {
 }
 
 // Задача №5
+
+		/*Часть №1*/
+
+let arr3 = [];
+
+for (i = 1; i <= 5; i++) {
+arr3.push(prompt("Введите число"));
+}
+console.log(arr3.reverse());
+
+
+        /*Часть №2*/
+
+let num2 = 1;        
+for (i = 1; i <= 20; i++) {
+	num2 = num2 * 2;
+	console.log(num2);
+}
+
+		/*Часть №3*/
+
+a = "#";
+for (i = 1; i <= 10; i++) {
+	console.log(a);
+	a = a + "#"
+}
+
+
+
