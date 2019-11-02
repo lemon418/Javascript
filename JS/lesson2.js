@@ -43,8 +43,8 @@ for (let i = 1; i <= 100; i++) {
 // Задача №3
 
 
-let plates = 10;
-let wash = 20;
+let plates = 20;
+let wash = 10;
 for (i = 1; (i <= plates) && (i <= wash); i++) {
 
 	console.log("Осталось " + (plates - i) + " тарелок");
