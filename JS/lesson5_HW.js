@@ -32,7 +32,8 @@ function getGoods(obj, from, to) {
 	for (let i in obj) {
 	if (obj[i].price >= from && obj[i].price <= to) {
         let a = obj[i];	
-        console.log(a);
+        back[i] = obj[i];
+        console.log(back);
 	}
 }
 }
@@ -45,7 +46,7 @@ function addToCart(obj, title, countToCart) {
         if (obj[i].title != title) continue;
         if (countToCart <= obj[i].count)  {
             let del = obj[i].count - countToCart;
-            console.log(del);
+            console.log(`${del}`);
         }
         else {
             console.log(`Недостаточное количество`);
@@ -55,5 +56,24 @@ function addToCart(obj, title, countToCart) {
 
 addToCart(goods, "Флейта", 40);
 
+
+
+
+    let books = [
+        { author: 'Толстой', title: 'Война и мир'},
+        { author: 'Гончаров', title: 'Обломов'},
+        { author: 'Лермонтов', title: 'Герой Нашего Времени'}
+    ];
+
+// function sortTitle(arr, toTitle) {
+//     for (let i = 0; i < arr.length; i++) {
+//        arr.toTitle.sort();
+//     }
+// }
+
+// sortTitle(books, "title");
+
+books.title.sort();
+console.log(books);
 
 
