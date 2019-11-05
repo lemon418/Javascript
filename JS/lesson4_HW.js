@@ -6,3 +6,7 @@ function alph(someStr) {
 	console.log(arr);
 }
 alph(str);
+
+// Задача №2
+
+
