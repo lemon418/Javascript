@@ -47,15 +47,17 @@ getGoods(goods, 3000, 4000);
 
 function addToCart(obj, title, countToCart) {
     for (let i in obj) {
-        // if (obj[i].title = title && countToCart >= obj[i].count)
+       // if (title === obj[i].title) {
+
         if (countToCart <= obj[i].count)  {
             obj[i].count -= countToCart;
             console.log(`${obj[i].count}`);
         }
         else {
             console.log(`Недостаточное количество`);
-        }
-    }
+        } 
+      }
+    // }
 }
 
 addToCart(goods, "Флейта", 40);
