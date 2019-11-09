@@ -26,7 +26,9 @@
         }
     };
 
-   
+  
+//Задача №1
+
 function getGoods(obj, from, to) {
 	let back = {};
 	for (let i in obj) {
@@ -40,14 +42,15 @@ return back;
 }
 getGoods(goods, 3000, 4000);
 
+//Задача №2
+
 
 function addToCart(obj, title, countToCart) {
     for (let i in obj) {
         // if (obj[i].title = title && countToCart >= obj[i].count)
-        
         if (countToCart <= obj[i].count)  {
-            let del = obj[i].count -= countToCart;
-            console.log(`${del}`);
+            obj[i].count -= countToCart;
+            console.log(`${obj[i].count}`);
         }
         else {
             console.log(`Недостаточное количество`);
@@ -58,7 +61,7 @@ function addToCart(obj, title, countToCart) {
 addToCart(goods, "Флейта", 40);
 
 
-
+//Задача №3
 
     let books = [
         { author: 'Толстой', title: 'Война и мир'},
