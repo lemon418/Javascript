@@ -36,6 +36,7 @@ function getGoods(obj, from, to) {
         console.log(back);
 	}
 }
+return back;
 }
 getGoods(goods, 3000, 4000);
 
@@ -43,9 +44,9 @@ getGoods(goods, 3000, 4000);
 function addToCart(obj, title, countToCart) {
     for (let i in obj) {
         // if (obj[i].title = title && countToCart >= obj[i].count)
-        if (obj[i].title != title) continue;
+        
         if (countToCart <= obj[i].count)  {
-            let del = obj[i].count - countToCart;
+            let del = obj[i].count -= countToCart;
             console.log(`${del}`);
         }
         else {
@@ -65,15 +66,13 @@ addToCart(goods, "Флейта", 40);
         { author: 'Лермонтов', title: 'Герой Нашего Времени'}
     ];
 
-// function sortTitle(arr, toTitle) {
-//     for (let i = 0; i < arr.length; i++) {
-//        arr.toTitle.sort();
-//     }
-// }
 
-// sortTitle(books, "title");
+    function bookSort(arr) {
+        arr.sort((a, b) => a.title.localeCompare(b.title));
+        
+    }
 
-books.title.sort();
-console.log(books);
+    bookSort(books);
+    console.log(books);
 
 
