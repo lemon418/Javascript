@@ -12,17 +12,15 @@ alph(str);
 // Задача №2
 
 let str2 = prompt();
-let strSub = prompt();
+let target = prompt();
 
-let sum = str2.indexOf(strSub);
-
-
-if (sum === -1) {
-	alert("Ничего не найдено");
+let pos = str2.indexOf(target);
+let count = 0;
+while (pos !== -1) {
+		count++;
+		pos = str2.indexOf(target, pos + 1);
 }
-
-else if (sum >= 0) {
-	alert("Совпадение присутствует");
+console.log(`Найдено ${count} совпадений`);
 }
 
 
