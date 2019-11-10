@@ -21,7 +21,7 @@ while (pos !== -1) {
 		pos = str2.indexOf(target, pos + 1);
 }
 console.log(`Найдено ${count} совпадений`);
-}
+
 
 
 // Задача №3
