@@ -53,18 +53,28 @@ let articles = [
     }
 ];
 
+let key = []; // created array for keys 
 function generateTable(table) {
     let tbl = document.createElement("tbody");
+    tbl.classList.add("border");
     document.body.append(tbl);
-
+    let tr = document.createElement("tr");
     for (let i = 0; i < table.length; i++) {
         let row = tbl.insertRow(i);
-         for (let item  in table[i]) {
+         for (item  in table[i]) {
                 let cell = row.insertCell();
-                cell.innerText = table[i][item];         
+                cell.innerText = table[i][item];          
+                if (key.includes(item)) continue; //only one time key shall be put in array
+                key.push(item);      
         }
     }
+    let rowHd = tbl.insertRow(0);
+    for (let k = 0; k < key.length; k++) {  //loop for property heads
 
+        let th = document.createElement("th");
+        rowHd.append(th);
+        th.innerText = key[k];
+    }
 }
-generateTable(articles);
+generateTable(goods);
 
