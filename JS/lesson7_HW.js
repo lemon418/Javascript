@@ -1,3 +1,5 @@
+// Задача №1
+
 let goods = [
         {
             title: "Пианино",
@@ -59,7 +61,6 @@ let key = []; // created array for keys
     tbl.classList.add("border");
     document.body.append(tbl);
     let tr = document.createElement("tr");
-    
     for (let i = 0; i < table.length; i++) {
         let row = tbl.insertRow(i);
          for (item  in table[i]) {
@@ -77,4 +78,49 @@ let key = []; // created array for keys
     }
 }
 generateTable(articles);
+
+
+let th = document.querySelectorAll('th');
+
+for (let c = 0; c < th.length; c++) {
+    th[c].addEventListener('click', elem(c))
+}
+
+function elem(c) {
+    return function(){
+        sortTable(c);
+    }
+}
+
+function sortTable(c) {
+    let table, rows, switching, i, x, y, shouldSwitch;
+    table = document.querySelector('.border');
+    switching = true;
+    while(switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++){
+            shouldSwitch = false;
+            x = rows[i].cells[c];
+            y = rows[i + 1].cells[c];
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true; 
+                break;   
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
 
