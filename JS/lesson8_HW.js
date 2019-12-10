@@ -1,4 +1,3 @@
-// Задача №1
 
 let canvas = document
     .getElementsByTagName("canvas")[0];
@@ -10,11 +9,10 @@ let ctx = canvas.getContext("2d");
 ctx.fillStyle = "#99ccff";
 ctx.fillRect(0, 0, 800, 600);
 
-
-let rabbit = {
-    img: 'rabbit.png',
-    x: null,
-    y: null,
+let tiger = {
+    img: 'tiger.png',
+    x: 22,
+    y: 15,
     width: 128,
     height: 128
 };
@@ -25,23 +23,11 @@ function drawImg(obj) {
     img.onload = () => {
         ctx.drawImage(
             img,
-            obj.x = Math.floor((Math.random() * 672) +1),
-            obj.y = Math.floor((Math.random() * 472) +1),
+            obj.x, obj.y,
             obj.width, obj.height
         );
     }
 }
-
-drawImg(rabbit);
-drawImg(rabbit);
-
-let tiger = {
-    img: 'tiger.png',
-    x: 22,
-    y: 15,
-    width: 128,
-    height: 128
-};
 
 drawImg(tiger);
 
@@ -80,5 +66,40 @@ function clearImg(obj) {
 
 document.addEventListener("keydown",
     move.bind(document, tiger));
+
+
+// Задача №1
+
+let rabbit = {
+    img: 'rabbit.png',
+    x: null,
+    y: null,
+    width: 128,
+    height: 128
+};
+
+function drawRabbit(obj) {
+    let img = new Image();
+    img.src = 'img/' + obj.img;
+    img.onload = () => {
+        ctx.drawImage(
+            img,
+            obj.x = Math.floor((Math.random() * 672) +1),
+            obj.y = Math.floor((Math.random() * 472) +1),
+            obj.width, obj.height
+        );
+    }
+}
+
+drawRabbit(rabbit);
+drawRabbit(rabbit);
+
+// Задача №2
+
+if (tiger.x === rabbit.x) {
+	ctx.clearImg(rabbit);
+}
+
+
 
 
