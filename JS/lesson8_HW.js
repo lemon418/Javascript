@@ -1,4 +1,3 @@
-
 let canvas = document
     .getElementsByTagName("canvas")[0];
 
@@ -39,23 +38,54 @@ function move(obj, event) {
     console.log(event.code);
     if (event.code === "KeyD") {
         console.log("перемещение вправо");
+        console.log(obj.x + ' ' +rabbit.x);
+        console.log(obj.y + ' ' +rabbit.y);
         clearImg(obj);
-        obj.x += 2;
+        obj.x += 3;
+
+        if ((obj.x + obj.width >= rabbit.x) && (obj.x <= rabbit.x + rabbit.width)
+            && (obj.y  >= rabbit.y - rabbit.height) 
+            && (obj.y  <= rabbit.y + rabbit.height)) {
+            ctx.fillRect(0, 0, 800, 600);
+        }
+
         drawImg(obj);
     } else if (event.code === "KeyA") {
         console.log("перемещение влево");
         clearImg(obj);
-        obj.x -= 2;
+        obj.x -= 3;
+
+        if ((obj.x <= rabbit.x + rabbit.width) && (obj.x + obj.width >= rabbit.x)
+            && (obj.y  >= rabbit.y - rabbit.height) 
+            && (obj.y  <= rabbit.y + rabbit.height)) {
+            ctx.fillRect(0, 0, 800, 600);
+        }  
         drawImg(obj);
     } else if (event.code === "KeyW") {
         console.log("перемещение вверх");
         clearImg(obj);
-        obj.y -= 2;
+        obj.y -= 3;
+        if ((obj.y + obj.height >= rabbit.y) && (obj.y <= rabbit.y + rabbit.height)
+            && (obj.x + obj.width >= rabbit.x) 
+            && (obj.x <= rabbit.x + rabbit.width)
+            ) 
+        {
+            ctx.fillRect(0, 0, 800, 600);
+        }
+
+  
         drawImg(obj);
     } else if (event.code === "KeyS") {
         console.log("перемещение вниз");
         clearImg(obj);
-        obj.y += 2;
+        obj.y += 3;
+        if ((obj.y + obj.height >= rabbit.y) && (obj.y <= rabbit.y + rabbit.height)
+            && (obj.x + obj.width >= rabbit.x) 
+            && (obj.x <= rabbit.x + rabbit.width)
+            ) 
+            {
+            ctx.fillRect(0, 0, 800, 600);
+        }    
         drawImg(obj);
     }
 }
@@ -78,6 +108,8 @@ let rabbit = {
     height: 128
 };
 
+
+
 function drawRabbit(obj) {
     let img = new Image();
     img.src = 'img/' + obj.img;
@@ -88,17 +120,21 @@ function drawRabbit(obj) {
             obj.y = Math.floor((Math.random() * 472) +1),
             obj.width, obj.height
         );
+
     }
 }
 
 drawRabbit(rabbit);
 drawRabbit(rabbit);
 
+
+
+
 // Задача №2
 
-if (tiger.x === rabbit.x) {
-	ctx.clearImg(rabbit);
-}
+
+
+
 
 
 
