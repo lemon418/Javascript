@@ -1,6 +1,9 @@
 let canvas = document
     .getElementsByTagName("canvas")[0];
 
+let show = document.createElement('div');
+document.body.append(show);
+
 canvas.width = 800;
 canvas.height = 600;
 
@@ -30,6 +33,9 @@ function drawImg(obj) {
 
 drawImg(tiger);
 
+let score = 0;
+show.innerHTML = score;    
+
 function move(obj, event) {
     // w - перемещение вверх
     // a - перемещение влево
@@ -37,9 +43,6 @@ function move(obj, event) {
     // s - перемещение вниз
     console.log(event.code);
     if (event.code === "KeyD") {
-        console.log("перемещение вправо");
-        console.log(obj.x + ' ' +rabbit.x);
-        console.log(obj.y + ' ' +rabbit.y);
         clearImg(obj);
         obj.x += 3;
 
@@ -47,11 +50,14 @@ function move(obj, event) {
             && (obj.y  >= rabbit.y - rabbit.height) 
             && (obj.y  <= rabbit.y + rabbit.height)) {
             ctx.fillRect(0, 0, 800, 600);
+            score++;
+            show.innerHTML = score;  
+            console.log(score);
+            drawRabbit(rabbit);
         }
 
         drawImg(obj);
     } else if (event.code === "KeyA") {
-        console.log("перемещение влево");
         clearImg(obj);
         obj.x -= 3;
 
@@ -59,10 +65,13 @@ function move(obj, event) {
             && (obj.y  >= rabbit.y - rabbit.height) 
             && (obj.y  <= rabbit.y + rabbit.height)) {
             ctx.fillRect(0, 0, 800, 600);
+            score++;
+            show.innerHTML = score;  
+            console.log(score);
+            drawRabbit(rabbit);
         }  
         drawImg(obj);
     } else if (event.code === "KeyW") {
-        console.log("перемещение вверх");
         clearImg(obj);
         obj.y -= 3;
         if ((obj.y + obj.height >= rabbit.y) && (obj.y <= rabbit.y + rabbit.height)
@@ -71,12 +80,15 @@ function move(obj, event) {
             ) 
         {
             ctx.fillRect(0, 0, 800, 600);
+            score++;
+            show.innerHTML = score;  
+            console.log(score);
+            drawRabbit(rabbit);
         }
 
   
         drawImg(obj);
     } else if (event.code === "KeyS") {
-        console.log("перемещение вниз");
         clearImg(obj);
         obj.y += 3;
         if ((obj.y + obj.height >= rabbit.y) && (obj.y <= rabbit.y + rabbit.height)
@@ -85,6 +97,10 @@ function move(obj, event) {
             ) 
             {
             ctx.fillRect(0, 0, 800, 600);
+            score++;
+            console.log(score);
+            show.innerHTML = score;
+            drawRabbit(rabbit);
         }    
         drawImg(obj);
     }
@@ -99,6 +115,17 @@ document.addEventListener("keydown",
 
 
 // Задача №1
+
+
+class Rabbit {
+    constructor(x, y) {
+    this.img = 'rabbit.png';
+    this.x = null;
+    this.y = null;
+    this.width = 128;
+    this.height =  128;  
+    }
+}
 
 let rabbit = {
     img: 'rabbit.png',
@@ -125,9 +152,8 @@ function drawRabbit(obj) {
 }
 
 drawRabbit(rabbit);
-drawRabbit(rabbit);
 
-
+console.log(score);
 
 
 // Задача №2
