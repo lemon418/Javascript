@@ -64,9 +64,62 @@ function days(count) {
 	
 }
 
-days(5);
+for (var i = 0; i < 100; i++) {
+	days(i);
+}
+
 
 	// Задача№4
+
+let array = [];
+
+function genArr(maxLength, maxNumber) {
+	for(let i = 0; i < 5; i++){
+		array[i] = [];
+		arrLength = Math.floor(Math.random() * maxLength);
+		for (let c = 0; c <= arrLength; c++) {
+			num = Math.floor(Math.random() * maxNumber + 1);
+			array[i].push(num);
+		}
+ 	}
+ 	array.forEach(item => console.log(item));	
+}
+
+genArr(10, 9);
+
+
+let id = 0;
+function sum(arr) { // функция считающая сумму чисел в каждом вложеном массиве
+	let countArr = [];
+		for (let i = 0; i < arr.length; i++) {
+			let count = 0;
+			for (let c = 0; c < arr[i].length; c++) {
+        		count += arr[i][c];	
+			}
+    		countArr.push(count);
+			console.log("сумма массива : " +count);
+		}
+	getMax(countArr); //вложенная функция
+}
+
+sum(array);
+
+function getMax(arry) { // функция определяющая наибольшее значение в массиве
+	let max = arry[0]; // берем первый элемент массива
+    for (let i = 0; i < arry.length; i++) { // переберем весь массив
+        // если элемент больше, чем в переменной, то присваиваем его значение переменной
+        if (max < arry[i]) {
+        	max = arry[i]; 
+        	id = i;
+        }	
+    }
+    console.log("Найбольшая сумма среди всех массиво: " + max);
+    return max;
+
+}
+console.log("Массив с максимальной суммой эементов: ");
+console.log(array[id]);
+
 
 
 
