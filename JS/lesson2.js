@@ -43,13 +43,17 @@ for (let i = 1; i <= 100; i++) {
 // Задача №3
 
 
-let plates = 20;
-let wash = 10;
-for (i = 1; (i <= plates) && (i <= wash); i++) {
+let plates = 23;
+let wash = 18;
 
-	console.log("Осталось " + (plates - i) + " тарелок");
-	wash = wash + 0.5; 
-	console.log("Осталось " + (wash - i) + " моющего средства");
+console.log("Осталось " + plates + " тарелок");
+console.log("Осталось " + wash + " моющего средства");
+
+while(0 < plates && 0.5 <= wash) {
+	wash = wash - 0.5; 
+	plates = plates - 1;
+	console.log("Осталось " + plates + " тарелок");
+	console.log("Осталось " + wash + " моющего средства");
 }
 
 // Задача №4
