@@ -17,13 +17,8 @@ let text = document.getElementById('text');
 
 let login = document.querySelector('#login');
 let psw = document.querySelector('#psw');
-
-login.addEventListener("focus", function (){
-
-
-});
-
 let ask  = document.querySelectorAll('.bottom');
+
 let style1 = ask[0].style;
 
 			login.addEventListener("focus",  () => {
