@@ -51,6 +51,27 @@
 		padding: 10px;
 		background: #ccc;
 	}
+
+	/*4th task*/
+
+	.login {
+		margin: 20px;
+		width: 250px;
+	}
+
+	.container {
+		padding: 10px 10px 0px 10px;
+		background: #ccc;
+
+	}
+
+	.bottom {
+			width:20%;
+			border-bottom: 5px solid red;
+			padding-top: 0px;
+			margin: 0 auto;
+	}
+	
 	</style>
 </head>
 <body>
@@ -60,6 +81,8 @@
 		<p>Осталось попыток: <span id="count">3</span></p>
 	</div>
 	<script src="js/lesson7_2_HW.js"></script>
+
+<!-- Задача №3 -->
 
 	<div class="checkbox">
 		<form action="#">
@@ -72,6 +95,40 @@
 			</div>
 		</form>
 	</div>
+
+<!-- Задача №4	 -->
+
+<div class="login">
+	<form action="#" name="len">
+		<div class="container">
+			
+				<label for="login">login</label>
+			
+				<input type="text" id="login" minlength="4" maxlength="10">
+			
+				<div class="bottom"></div>
+			
+		</div>
+		<div class="container">
+			<label for="psw">password</label>
+			<input type="password" id="psw" minlength="6">
+			<div class="bottom"></div>
+		</div>
+
+		<div class="container">
+			
+			<input type="submit" id="submit">
+			
+		</div>
+
+				<div class="container">
+			
+			<input type="button" id="reset" value="Очистить">
+			
+		</div>
+	</form>
+</div>
+
 	<script src="js/lesson7_3n4_HW.js"></script>
 </body>
 </html>
