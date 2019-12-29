@@ -27,11 +27,9 @@ let ask  = document.querySelectorAll('.bottom');
 let style1 = ask[0].style;
 
 			login.addEventListener("focus",  () => {
-				style1.display = "block"; 
 				if (login.value.length <= 3) {
 					style1.borderBottom = "5px solid red" 
 				}
-
 			});
 
 
@@ -39,11 +37,9 @@ let style1 = ask[0].style;
 				if (login.value.length > 3) {
 					style1.borderBottom = "5px solid green"; 
 				}
-
 				else {
 					style1.borderBottom = "5px solid red"
 				}
-
 			});
 
 let style2 = ask[1].style;
